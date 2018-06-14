@@ -3,5 +3,4 @@
 9ae16cec4606c4e5d6d9e5dafb01a36f5fa89e2f services/ashs_dzne7t/service_ashs_dzne7t.sh
 3f59e5ebed845e16e414abc68cd7cc671839297d services/ashs_utrecht/service_ashs_utrecht.sh
 ff2310615264f162966fe7d4ddc2e4dba409a35b services/ashs_princeton/service_ashs_princeton.sh
-dd928407dee8146778942329cc8d01d78c27b5dd /home/srdas/aloha_test/services/aloha/service_aloha.sh
 455103a0295cbf85b267d40b0350d12784b198cc /home/longxie/ashs_pmc_T1/service_ashs_pmc_T1.sh
