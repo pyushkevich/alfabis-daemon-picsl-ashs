@@ -5,4 +5,4 @@
 ff2310615264f162966fe7d4ddc2e4dba409a35b services/ashs_princeton/service_ashs_princeton.sh
 dd928407dee8146778942329cc8d01d78c27b5dd /home/srdas/aloha_test/services/aloha/service_aloha.sh
 455103a0295cbf85b267d40b0350d12784b198cc /home/longxie/ashs_pmc_T1_sandbox/service_ashs_pmc_T1.sh
-aaa226f9ccaf745e2f3d8f219179c1c4a712015a /home/longxie/ashs_pmc_7TT1_sandbox/service_ashs_pmc_T1.sh
+6b643ca9a661ef721120437f7c242c02a951bb7f /home/longxie/ashs_pmc_7TT1_sandbox/service_ashs_pmc_T1.sh
