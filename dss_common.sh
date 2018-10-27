@@ -26,5 +26,17 @@ function fail_ticket()
   sleep 2
 }
 
+function fail_ticket_if_not_failed()
+{
+  local ticket_id=${1?}
+  local message=${2?}
+  local status=$(itksnap-wt -P -dssp-tickets-status $ticket_id)
+  if [[ $status != 'failed' ]]; then
+    itksnap-wt -dssp-tickets-fail $ticket_id "$message"
+    sleep 2
+  fi
+}
+  
+
 # Define the script home directory
 SCRIPTDIR=$(dirname $(dereflink $0))

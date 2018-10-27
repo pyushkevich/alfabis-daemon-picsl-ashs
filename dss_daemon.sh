@@ -87,11 +87,25 @@ function main_loop()
 
     # Call with parameters: ticket, workdir, input workspace, output workspace
     bash $SCRIPT ${TICKET_ID} ${WORKDIR} ${WSFILE} $WSRESULT
-    
-    # Upload the result workspace
-    if [[ $? -eq 0 ]]; then
-      itksnap-wt -i $WSRESULT -dssp-tickets-upload $TICKET_ID -dssp-tickets-success $TICKET_ID
+
+    # If script failed, we continue, but do not call fail ticket because it should
+    # already be failed
+    if [[ $? -ne 0 ]]; then
+      fail_ticket_if_not_failed $TICKET_ID "Unknown error encountered by analysis pipeline"
+      continue
     fi
+
+    # Upload the result workspace
+    itksnap-wt -i $WSRESULT -dssp-tickets-upload $TICKET_ID
+
+    # If the download failed we mark the ticket as failed
+    if [[ $? -ne 0 ]]; then
+      fail_ticket $TICKET_ID "Failed to upload the ticket"
+      continue
+    fi
+
+    # Set the status of the ticket to success
+    itksnap-wt -dssp-tickets-success $TICKET_ID
 
     # We no longer have an active ticket
     unset TICKET_ID
